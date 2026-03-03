@@ -8,6 +8,7 @@
 
 }
 
+
 .Menu p{
     font-size:20px;
     margin:2px;
@@ -15,8 +16,29 @@
 
 .menuItem{
     margin-bottom:30px;
+    display:flex;
+    gap:20px;
+    justify-content:space-between;
+    align-items:center;
 }
 
+.menuItem button{
+  flex: 0 0 auto;        /* do NOT stretch */
+  width: auto;           /* remove big width */
+  height: auto;          /* remove big height */
+  padding: 10px 16px;    /* normal button size */
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  white-space: nowrap;   /* keep "Add to Cart" on one line */
+  background-color:rgb(156, 175, 136);
+}
+
+.menuItem button:hover{
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    opacity:0.7;
+    
+}
 .itemName{
     color: rgb(156, 175, 136)
 }

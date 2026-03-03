@@ -1,13 +1,11 @@
 import Header from '../components/Header'
 import Menu from '../components/Menu'
-export function HomePage() {
 
-
-    return (
+export function Order(){
+    return(
         <>
-        <Header />
-        <Menu showAddToCart={false} />
-
+        <Header></Header>
+        <Menu showAddToCart={true}/>
         </>
     )
 }
