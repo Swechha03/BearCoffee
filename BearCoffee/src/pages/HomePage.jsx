@@ -1,11 +1,11 @@
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 
-export function HomePage() {
+export function HomePage({cartNumber, setCartNumber}) {
  return (
         <>
-        <Header />
-        <Menu showAddToCart={false} />
+        <Header cartNumber={cartNumber}/>
+        <Menu showAddToCart={false} setCartNumber={setCartNumber} cartNumber={cartNumber} />
 
         </>
     )

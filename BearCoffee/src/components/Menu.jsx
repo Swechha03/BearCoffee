@@ -1,9 +1,13 @@
 import menuItems from '../data/menuItems.js'
 import './Menu.css'
 
-function Menu({ showAddToCart}) {
+function Menu({ showAddToCart, setCartNumber, cartNumber }) {
     return (
         <div className="Menu">
+            <p className="menu-title">
+                Our Menu
+                <span className="bear" aria-hidden="true">🐻</span>
+            </p>
             {menuItems.map((item) => {
                 return (
                     <div className="menuItem" key={item.id}>
@@ -14,7 +18,17 @@ function Menu({ showAddToCart}) {
                         </div>
 
 
-                        {showAddToCart && (<button> Add to Cart</button>)}
+                        {showAddToCart && (
+                            <button className="add-to-cart-button"
+                                onClick={
+                                    () => {
+                                        setCartNumber(cartNumber + 1)
+                                    }
+                                }
+                            >
+                                Add to Cart
+                            </button>
+                        )}
                     </div>
                 )
             })

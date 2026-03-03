@@ -1,44 +1,73 @@
-.Menu{
-   margin: 50px auto;
+.Menu {
+    margin: 50px auto;
     background-color: rgb(74, 50, 39);
     color: rgb(245, 236, 220);
-    width:500px;
-    padding:35px;
-    border-radius:10px;
+    width: 500px;
+    padding: 35px;
+    padding-top: 10px;
+    border-radius: 10px;
+    gap:10px;
 
 }
 
-
-.Menu p{
-    font-size:20px;
-    margin:2px;
+.menuItemContent p {
+    font-size: 20px;
+    margin: 2px;
 }
 
-.menuItem{
-    margin-bottom:30px;
-    display:flex;
-    gap:20px;
-    justify-content:space-between;
-    align-items:center;
+.menu-title {
+    display: flex;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 30px;
+    gap:10px;
+
 }
 
-.menuItem button{
-  flex: 0 0 auto;        /* do NOT stretch */
-  width: auto;           /* remove big width */
-  height: auto;          /* remove big height */
-  padding: 10px 16px;    /* normal button size */
-  border-radius: 8px;
-  border: none;
-  cursor: pointer;
-  white-space: nowrap;   /* keep "Add to Cart" on one line */
-  background-color:rgb(156, 175, 136);
+.menuItem {
+    margin-bottom: 30px;
+    display: flex;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.menuItem button:hover{
+.menuItem button {
+    flex: 0 0 auto;
+    /* do NOT stretch */
+    width: auto;
+    /* remove big width */
+    height: auto;
+    /* remove big height */
+    padding: 10px 16px;
+    /* normal button size */
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    white-space: nowrap;
+    /* keep "Add to Cart" on one line */
+    background-color: rgb(156, 175, 136);
+}
+
+.menuItem button:hover {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
-    opacity:0.7;
-    
+    opacity: 0.7;
+
 }
-.itemName{
+
+.itemName {
     color: rgb(156, 175, 136)
+}
+
+.bear {
+    display: inline-block;
+    animation: bearWiggle 1.2s ease-in-out infinite;
+    transform:translateY(-4px);
+}
+
+@keyframes bearWiggle {
+  0%   { transform: translateX(0) translateY(-4px); }
+  50%  { transform: translateX(12px) translateY(-4px);}
+  100% { transform: translateX(0) translateY(-4px); }
+
 }

@@ -1,11 +1,11 @@
 import Header from '../components/Header'
 import Menu from '../components/Menu'
 
-export function Order(){
+export function Order({cartNumber, setCartNumber}){
     return(
         <>
-        <Header></Header>
-        <Menu showAddToCart={true}/>
+        <Header cartNumber={cartNumber}></Header>
+        <Menu showAddToCart={true} setCartNumber={setCartNumber}cartNumber={cartNumber} />
         </>
     )
 }

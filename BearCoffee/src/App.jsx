@@ -1,18 +1,40 @@
 import { Routes, Route } from 'react-router-dom'
-import {HomePage} from './pages/HomePage'
-import {Order} from './pages/Order'
-import {FAQ} from './pages/FAQ'
-import {AboutUs} from './pages/AboutUs'
+import { useState } from 'react'
+import { HomePage } from './pages/HomePage'
+import { Order } from './pages/Order'
+import { FAQ } from './pages/FAQ'
+import { AboutUs } from './pages/AboutUs'
+import { Cart } from './pages/Cart'
 import './App.css'
 
 function App() {
+  const [cartNumber, setCartNumber] = useState(0);
+
   return (
     <>
       <Routes>
-          <Route index element={<HomePage />} />
-          <Route path='/order' element={<Order />} />
-          <Route path='/aboutUs' element={<AboutUs />} />
-          <Route path='/faq' element={<FAQ />} />
+        <Route
+          index element={
+            <HomePage cartNumber={cartNumber} />
+          }
+        />
+        <Route
+          path='/order'
+          element={<Order cartNumber={cartNumber} setCartNumber={setCartNumber} />}
+        />
+        <Route
+          path='/aboutUs'
+          element={<AboutUs />}
+        />
+        <Route
+          path='/faq'
+          element={<FAQ />}
+        />
+        <Route
+          path='/cart'
+          element={<Cart cartNumber={cartNumber}
+            setCartNumber={setCartNumber} />}
+        />
       </Routes>
     </>
   )
