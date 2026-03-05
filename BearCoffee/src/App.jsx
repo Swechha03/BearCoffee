@@ -9,6 +9,7 @@ import './App.css'
 
 function App() {
   const [cartNumber, setCartNumber] = useState(0);
+  const [cartItems,setCartItems]=useState([]);
 
   return (
     <>
@@ -20,7 +21,11 @@ function App() {
         />
         <Route
           path='/order'
-          element={<Order cartNumber={cartNumber} setCartNumber={setCartNumber} />}
+          element={<Order cartNumber={cartNumber} 
+          setCartNumber={setCartNumber}
+          cartItems={cartItems}
+          setCartItems={setCartItems}
+           />}
         />
         <Route
           path='/aboutUs'
@@ -33,7 +38,11 @@ function App() {
         <Route
           path='/cart'
           element={<Cart cartNumber={cartNumber}
-            setCartNumber={setCartNumber} />}
+            setCartNumber={setCartNumber} 
+             cartItems={cartItems}
+          setCartItems={setCartItems}
+          />
+          }
         />
       </Routes>
     </>

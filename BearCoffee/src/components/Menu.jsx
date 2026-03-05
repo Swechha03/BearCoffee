@@ -1,7 +1,7 @@
 import menuItems from '../data/menuItems.js'
 import './Menu.css'
 
-function Menu({ showAddToCart, setCartNumber, cartNumber }) {
+function Menu({ showAddToCart, setCartNumber, cartNumber, cartItems, setCartItems }) {
     return (
         <div className="Menu">
             <p className="menu-title">
@@ -22,7 +22,34 @@ function Menu({ showAddToCart, setCartNumber, cartNumber }) {
                             <button className="add-to-cart-button"
                                 onClick={
                                     () => {
-                                        setCartNumber(cartNumber + 1)
+                                        setCartItems((cartItems) => {
+                                            //find loops through each element in cartItems,returns the item in exisiting Item if it can find one. 
+                                            const existingItem = cartItems.find((cartItem) => {
+                                                return cartItem.id === item.id
+                                            })
+
+                                            if (existingItem) {
+                                                return (
+                                                    cartItems.map((cartItem) => {
+                                                        return cartItem.id === item.id
+                                                            // double ? is if i t exists use it or else use 1. 
+                                                            ? { ...cartItem, qty: (cartItem.qty ?? 1) + 1 }
+                                                            : cartItem;
+                                                    })
+
+                                                )
+                                            }
+
+                                            return (
+                                                [...cartItems, { ...item, qty: 1 }]
+                                            )
+                                        }
+                                        )
+
+
+                                        setCartNumber((cartNumber) => {
+                                            return cartNumber + 1
+                                        })
                                     }
                                 }
                             >
