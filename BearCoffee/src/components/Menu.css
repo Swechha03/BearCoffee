@@ -34,18 +34,13 @@
 
 .menuItem button {
     flex: 0 0 auto;
-    /* do NOT stretch */
     width: auto;
-    /* remove big width */
     height: auto;
-    /* remove big height */
     padding: 10px 16px;
-    /* normal button size */
     border-radius: 8px;
     border: none;
     cursor: pointer;
     white-space: nowrap;
-    /* keep "Add to Cart" on one line */
     background-color: rgb(156, 175, 136);
 }
 
